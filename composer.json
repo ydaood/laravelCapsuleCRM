@@ -35,5 +35,6 @@
                 "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
             }
         }
-    }
+    },
+    "license":"Apache License 2.0"
 }
