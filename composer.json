@@ -2,6 +2,7 @@
     "name": "laravel_crm/capsulecrm",
     "description": "Laravel Package for capsule CRM integration",
     "type": "library",
+    "keywords":["laravel","crm","capsulecrm","capsule"],
     "authors": [
         {
             "name": "Youssef Daood",
