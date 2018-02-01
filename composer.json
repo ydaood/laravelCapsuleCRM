@@ -38,5 +38,12 @@
             }
         }
     },
-    "license":"MIT"
+    "license":"MIT",
+    "scripts": {
+        "post-install-cmd": [
+          "php artisan vendor:publish --tag=capsuleCRM --force"
+        ],
+        "post-update-cmd": [
+        ]
+      }
 }
