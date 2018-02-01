@@ -46,9 +46,42 @@ CapsuleCRM::party()
    ```
    for crud operations :
    
-   1. Resgister account:
+   1. Create new account :
+   ```php 
+   $data=[
+   'name'=>'youssef daood',
+   'email'=>'ydaood@arkdev.net',
+   'tags'=>['register','subscribe']
+   ];
+   CapsuleCRM::party()->create($data);
+   ```
+   
+   2. Resgister account:
   ```php
-  CapsuleCRM::party()->registerParty($data, $tag);
+  $data=[
+   'name'=>'youssef daood',
+   'email'=>'ydaood@arkdev.net'
+   ];
+   $tag='subscribe';
+  CapsuleCRM::party()->register($data, $tag);
   ```
+  3. Update account:
+  ```php
+  $id=1; // id of capsule
+  $data=[
+  'name'=>'youssef'
+  ];
+  CapsuleCRM::party()->update($id, $data);
+  ```
+  4. validateUniqueEmail:
+  ```php  
+  $email='ydaood@arkdev.net';
+  CapsuleCRM::party()->validateUniqueEmail($email);
+  ``` 
+  5. Search
+  ```php  
+  $filter='youssef';
+  CapsuleCRM::party()->search($filter);
+  ``` 
    
 
