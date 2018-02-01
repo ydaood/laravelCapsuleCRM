@@ -30,4 +30,25 @@
         * ```CAPSULECRM_APP_NAME```
         * ```CAPSULECRM_BASE_URI``` default is ```https://api.capsulecrm.com/api/v2/```      
 ### Usage
+Common usage :
+```php
+CapsuleCRM::{entity name}()
+````
+Example :
+```php 
+CapsuleCRM::party()
+```
+   * Party:
+   Parties represent the People and Organisations on your Capsule account.
+   His Object is :
+   ```php
+   CapsuleCRM::party();
+   ```
+   for crud operations :
+   
+   1. Resgister account:
+  ```php
+  CapsuleCRM::party()->registerParty($data, $tag);
+  ```
+   
 
