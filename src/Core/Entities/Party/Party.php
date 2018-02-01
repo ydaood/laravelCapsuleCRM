@@ -29,7 +29,7 @@ class Party extends CapsulecrmManager
      * @param string $tag
      * @return \App\Services\Capsulecrm\ClientException|\App\Services\Capsulecrm\Response|\App\Services\Capsulecrm\type|int
      */
-    public function registerParty(array $data, $tag)
+    public function register(array $data, $tag)
     {
         $data['tags'][] = $tag;
         $this->validation($data);
@@ -50,7 +50,7 @@ class Party extends CapsulecrmManager
      * @param array $data
      * @return type
      */
-    protected function store(array $data)
+    public function store(array $data)
     {
         $body = $this->prepareDataFactory->setData($data)->name()->type()->email()->tags()->getBody();
 
@@ -63,7 +63,7 @@ class Party extends CapsulecrmManager
      * @param array $data
      * @return int|ClientException|Response
      */
-    protected function update($id, array $data)
+    public function update($id, array $data)
     {
         $url = $this->url."/$id";
 
@@ -93,20 +93,36 @@ class Party extends CapsulecrmManager
     }
 
     /**
-     * Validate if user email exist on Capcula
+     * Validate if user email exist on Capsule
      *
      * @param $email string
-     * @return bool (true if email not exist otherwise return user id)
+     * @return mix (true if email not exist otherwise return user id)
      */
-    private function validateUniqueEmail($email)
+    public function validateUniqueEmail($email)
     {
-        $query = $this->url.'/search?'."q=$email";
-        $response = $this->get(false, $query);
-        checkResponseException($response);
-        if (count($response->parties)) {
-            return $response->parties[0]->id;
+        $response= $this->search($email);
+        if ($response!=false) {
+            return $response[0]->id;
         }
 
         return true;
+    }
+    
+    /**
+     * Search For Party by any $filter on Capsule
+     *
+     * @param $filter string
+     * @return mix (false if email not exist otherwise return user id)
+     */
+    public function search($filter)
+    {
+        $query = $this->url.'/search?'."q=$filter";
+        $response = $this->get(false, $query);
+        checkResponseException($response);
+        if (count($response->parties)) {
+            return $response->parties;
+        }
+
+        return false;
     }
 }

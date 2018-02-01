@@ -42,7 +42,7 @@ class PrepareDataForParty
      */
     public function type()
     {
-        $this->body['party']['type'] = 'person';
+        $this->body['party']['type'] = valueExist($this->data, 'type', 'person');
 
         return $this;
     }
@@ -70,7 +70,7 @@ class PrepareDataForParty
      */
     public function name()
     {
-        $this->body['party']['firstName'] = valueExist($this->data, 'first_name', $this->data['email']);
+        $this->body['party']['firstName'] = valueExist($this->data, 'first_name', valueExist($this->data, 'name', $this->data['email']));
         $this->body['party']['lastName'] = valueExist($this->data, 'last_name', '');
 
         return $this;
