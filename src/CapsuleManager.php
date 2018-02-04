@@ -24,7 +24,9 @@ class CapsuleManager
     
     public function __call($name, $arguments)
     {
-        return new \CapsuleCRM\Core\Entities\Party\Party(); //$this->getInstance($name);
+        if (!method_exists($this, $name)) {
+            return $this->getInstance($name);
+        }
     }
     
     /**
@@ -37,9 +39,19 @@ class CapsuleManager
     {
         foreach ($this->entities as $entity=>$class) {
             if (studly_case(strtolower($name))== studly_case(strtolower($entity))) {
-                return new $class();
+                return $this->getSingleTon($class);
             }
         }
         throw new Exception("This Entity $name not exist");
+    }
+    
+    private function getSingleTon($class)
+    {
+        try {
+            return resolve($class);
+        } catch (ReflectionException $ex) {
+            app()->singleton($class);
+            return resolve($class);
+        }
     }
 }

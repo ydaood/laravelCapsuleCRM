@@ -26,12 +26,14 @@ class PrepareDataForParty
      */
     public function tags()
     {
-        foreach ($this->data['tags'] as $tag) {
-            $this->body['party']['tags'][] = [
-                'name' => $tag
-            ];
+        if (array_key_exists('tags', $this->data)) {
+            foreach ($this->data['tags'] as $tag) {
+                $this->body['party']['tags'][] = [
+                    'name' => $tag
+                ];
+            }
         }
-
+        
         return $this;
     }
 
