@@ -23,7 +23,7 @@
             "CapsuleCRM\\": "src/"
         },
         "files":[
-        "helper.php"
+        "src/helper.php"
         ]
     },
     "extra": {
