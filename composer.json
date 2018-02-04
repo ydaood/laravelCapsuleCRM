@@ -21,7 +21,10 @@
     "autoload": {       
         "psr-4": {
             "CapsuleCRM\\": "src/"
-        }
+        },
+        "files":[
+        "helper.php"
+        ]
     },
     "extra": {
         "_comment":{

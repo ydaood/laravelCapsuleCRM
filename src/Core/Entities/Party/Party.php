@@ -36,7 +36,7 @@ class Party extends CapsulecrmManager
         $valid = $this->validateUniqueEmail($data['email']);
 
         if ($valid === true) {
-            return $this->store($data);
+            return $this->create($data);
         } else {
             $body = $this->prepareDataFactory->setData(['tags' => $data['tags']])->tags()->getBody();
 
@@ -50,7 +50,7 @@ class Party extends CapsulecrmManager
      * @param array $data
      * @return type
      */
-    public function store(array $data)
+    public function create(array $data)
     {
         $body = $this->prepareDataFactory->setData($data)->name()->type()->email()->tags()->getBody();
 
