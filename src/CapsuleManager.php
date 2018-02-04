@@ -47,11 +47,10 @@ class CapsuleManager
     
     private function getSingleTon($class)
     {
-        try {
-            return resolve($class);
-        } catch (ReflectionException $ex) {
-            app()->singleton($class);
+        if (array_key_exists($class, app()->getBindings())) {
             return resolve($class);
         }
+        app()->singleton($class);
+        return resolve($class);
     }
 }
