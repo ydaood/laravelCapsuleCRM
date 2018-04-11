@@ -12,3 +12,18 @@ if (!function_exists('valueExist')) {
         return array_has($array, [$key])?$array[$key]:$default;
     }
 }
+
+if (! function_exists('checkResponseException')) {
+    /**
+     * check for object is Exception throw Exception Message
+     *
+     * @param \Exception $object
+     * @throws Exception
+     */
+    function checkResponseException($object)
+    {
+        if ($object instanceof \Exception) {
+            throw new \Exception($object->getMessage());
+        }
+    }
+}
