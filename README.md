@@ -10,13 +10,13 @@
    ````
    * Add Service Provider in ```config/app.php```  add service provider class
    ```php 
-   'providers'=>[
+   'providers' => [
          CapsuleCRM\CapsuleServiceProvider::class,
    ];
    ``` 
    * And add alias in ```config/app.php``` in ```aliases``` array add 
    ```php
-   'aliases'=>[
+   'aliases' => [
          'CapsuleCRM'=>CapsuleCRM\Facades\CapsuleCRM::class,
      ];
    ```
@@ -48,10 +48,10 @@ CapsuleCRM::party()
    
    1. Create new account :
    ```php 
-   $data=[
-   'name'=>'youssef daood',
-   'email'=>'ydaood@arkdev.net',
-   'tags'=>['register','subscribe']
+   $data = [
+   'name' => 'youssef daood',
+   'email' => 'ydaood@arkdev.net',
+   'tags' => ['register','subscribe']
    ];
    CapsuleCRM::party()->create($data);
    ```
@@ -59,28 +59,28 @@ CapsuleCRM::party()
    2. Resgister account:
   ```php
   $data=[
-   'name'=>'youssef daood',
-   'email'=>'ydaood@arkdev.net'
+   'name' => 'youssef daood',
+   'email' => 'ydaood@arkdev.net'
    ];
-   $tag='subscribe';
+   $tag = 'subscribe';
   CapsuleCRM::party()->register($data, $tag);
   ```
   3. Update account:
   ```php
-  $id=1; // id of capsule
-  $data=[
-  'name'=>'youssef'
+  $id = 1; // id of capsule
+  $data = [
+  'name' => 'youssef'
   ];
   CapsuleCRM::party()->update($id, $data);
   ```
   4. validateUniqueEmail:
   ```php  
-  $email='ydaood@arkdev.net';
+  $email = 'ydaood@arkdev.net';
   CapsuleCRM::party()->validateUniqueEmail($email);
   ``` 
   5. Search
   ```php  
-  $filter='youssef';
+  $filter = 'youssef';
   CapsuleCRM::party()->search($filter);
   ``` 
    
