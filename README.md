@@ -58,7 +58,7 @@ CapsuleCRM::party()
    
    2. Resgister account:
   ```php
-  $data=[
+  $data = [
    'name' => 'youssef daood',
    'email' => 'ydaood@arkdev.net'
    ];
