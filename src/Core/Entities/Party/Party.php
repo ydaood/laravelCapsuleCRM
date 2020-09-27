@@ -126,9 +126,9 @@ class Party extends CapsulecrmManager
         return false;
     }
 	
-    public function fetch($party_id)
+    public function fetch($partyId)
     {
-        $query = $this->url."/$party_id";
+        $query = $this->url."/$partyId";
         $response = $this->get(false, $query);
         checkResponseException($response);
         if ($response->party) {
@@ -138,9 +138,9 @@ class Party extends CapsulecrmManager
         return false;
     }
 	
-    public function people($party_id)
+    public function people($partyId)
     {
-        $query = $this->url."/$party_id/people";
+        $query = $this->url."/$partyId/people";
         $response = $this->get(false, $query);
         checkResponseException($response);
 
