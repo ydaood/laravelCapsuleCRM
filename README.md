@@ -83,5 +83,15 @@ CapsuleCRM::party()
   $filter = 'youssef';
   CapsuleCRM::party()->search($filter);
   ``` 
+  6. Fetch one party
+  ```php  
+  $party_id=123456;
+  $party = CapsuleCRM::party()->fetch($party_id);
+  ``` 
+  7. Get all person objects for a party
+  ```php  
+  $party_id=123456;
+  $people = CapsuleCRM::party()->people($party_id);
+  ``` 
    
 

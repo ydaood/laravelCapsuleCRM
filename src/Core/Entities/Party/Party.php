@@ -125,4 +125,29 @@ class Party extends CapsulecrmManager
 
         return false;
     }
+	
+    public function fetch($party_id)
+    {
+        $query = $this->url."/$party_id";
+        $response = $this->get(false, $query);
+        checkResponseException($response);
+        if ($response->party) {
+            return $response->party;
+        }
+
+        return false;
+    }
+	
+    public function people($party_id)
+    {
+        $query = $this->url."/$party_id/people";
+        $response = $this->get(false, $query);
+        checkResponseException($response);
+
+        if (count($response->parties)) {
+            return $response->parties;
+        }
+
+        return false;
+    }
 }
