@@ -2,6 +2,8 @@
 
 namespace CapsuleCRM;
 
+use Illuminate\Support\Str;
+
 class CapsuleManager
 {
     /**
@@ -38,7 +40,7 @@ class CapsuleManager
     private function getInstance($name)
     {
         foreach ($this->entities as $entity=>$class) {
-            if (studly_case(strtolower($name))== studly_case(strtolower($entity))) {
+            if (Str::studly(strtolower($name))== Str::studly(strtolower($entity))) {
                 return $this->getSingleTon($class);
             }
         }

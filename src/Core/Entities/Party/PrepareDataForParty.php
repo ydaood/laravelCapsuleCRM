@@ -2,6 +2,8 @@
 
 namespace CapsuleCRM\Core\Entities\Party;
 
+use Illuminate\Support\Arr;
+
 class PrepareDataForParty
 {
 
@@ -56,7 +58,7 @@ class PrepareDataForParty
      */
     public function email()
     {
-        if (array_has($this->data, 'email')) {
+        if (Arr::has($this->data, 'email')) {
             $this->body['party']['emailAddresses'] = [
                 ['type' => 'Work', 'address' => $this->data['email']]
             ];
