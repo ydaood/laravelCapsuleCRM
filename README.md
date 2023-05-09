@@ -1,4 +1,4 @@
-[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/v)](//packagist.org/packages/phpunit/phpunit) [![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](//packagist.org/packages/phpunit/phpunit) [![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit) [![License](https://poser.pugx.org/phpunit/phpunit/license)](//packagist.org/packages/phpunit/phpunit)
+[![Latest Stable Version](https://poser.pugx.org/laravel_crm/capsulecrm/v)](//packagist.org/packages/laravel_crm/capsulecrm) [![Total Downloads](https://poser.pugx.org/laravel_crm/capsulecrm/downloads)](//packagist.org/packages/laravel_crm/capsulecrm) [![Latest Unstable Version](https://poser.pugx.org/laravel_crm/capsulecrm/v/unstable)](//packagist.org/packages/laravel_crm/capsulecrm) [![License](https://poser.pugx.org/laravel_crm/capsulecrm/license)](//packagist.org/packages/laravel_crm/capsulecrm)
 
 # laravelCapsuleCRM
 ### Agenda
