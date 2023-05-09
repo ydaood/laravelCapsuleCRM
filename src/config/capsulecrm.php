@@ -8,5 +8,5 @@ return [
     'app_name'=> env('CAPSULECRM_APP_NAME'),
     
     // base uri of api
-    'base_uri'=> env('CAPSULECRM_BASE_URI')
+    'base_uri'=> env('CAPSULECRM_BASE_URI', 'https://api.capsulecrm.com/api/v2/')
 ];

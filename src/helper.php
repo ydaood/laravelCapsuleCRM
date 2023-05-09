@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Arr;
+
 if (!function_exists('valueExist')) {
     /**
      *
@@ -9,6 +12,6 @@ if (!function_exists('valueExist')) {
      */
     function valueExist(array $array, $key, $default)
     {
-        return array_has($array, [$key])?$array[$key]:$default;
+        return Arr::has($array, [$key])?$array[$key]:$default;
     }
 }
